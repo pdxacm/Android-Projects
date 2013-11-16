@@ -1,5 +1,6 @@
 // Joseph Yuhas
 // 9/15/2013
+// Have fun!
 
 
 private class ConnectToURL extends AsyncTask <String,Void,String> { // <> Specifies the parameters to the built in AsyncTask functions

@@ -22,10 +22,15 @@ private class ConnectToURL extends AsyncTask <String,Void,String> { // <> Specif
 		// This is returned automatically to onPostExecute 
 		return setString;
 	}
+
+	// This function can be called with ProgressUpdate in doInBackground
+	protected void onProgressUpdate() {
+         System.out.println("This is on progress update");
+     }
+
 	// onPostExecute is executed after doInBackground is done.
 	protected void onPostExecute(String setString) {
 		 displayCard(setString);
 	}
 }
 
-// The third function is something that executes while doInBackground is executing, like displaying a progress bar or whatever.

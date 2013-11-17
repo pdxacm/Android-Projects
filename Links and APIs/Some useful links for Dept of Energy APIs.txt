@@ -1,0 +1,20 @@
+Please add to this file as you find new links.
+
+Article on DOE API creation
+http://energy.gov/cio/articles/department-energy-implements-apis-cloud
+
+This article gives a hoverable state map with cost averages
+http://www.npr.org/blogs/money/2011/10/27/141766341/the-price-of-electricity-in-your-state
+
+IDEA: Possibly use data from NPR and make a DB with averages to use to start while looking for API to use (if one exists).
+
+Energy Table by state for residential, business, etc...
+http://www.eia.gov/electricity/monthly/epm_table_grapher.cfm?t=epmt_5_06_b
+
+EIA.gov API pages
+http://www.eia.gov/tools/models/
+http://www.eia.gov/developer/
+
+Government pages on window energy efficiency
+http://windows.lbl.gov/pub/selectingwindows/window.pdf
+http://energy.gov/energysaver/articles/do-it-yourself-home-energy-audits

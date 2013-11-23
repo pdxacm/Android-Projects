@@ -1,2 +1,4 @@
 url: zipfeed.us
 code: 2xXxE6vH
+
+zipcodes by state http://en.wikipedia.org/wiki/File:ZIP_Code_zones.svg

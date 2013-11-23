@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WindowProject</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_bill_info">BillInfoActivity</string>
+    <string name="title_activity_dimensions">DimensionsActivity</string>
+
+    
+    
+    
+    
+</resources>

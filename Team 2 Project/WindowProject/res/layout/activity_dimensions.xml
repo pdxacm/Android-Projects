@@ -23,7 +23,7 @@
         android:layout_below="@+id/textView1"
         android:layout_marginTop="15dp"
         android:ems="10"
-        android:text="20 " />
+        android:hint="20 " />
 
     <Spinner
         android:id="@+id/spinner1"

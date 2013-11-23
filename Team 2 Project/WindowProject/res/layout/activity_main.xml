@@ -28,7 +28,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="52dp"
         android:ems="10"
-        android:text="Enter your Zipcode: " >
+        android:hint="Enter your Zipcode: " >
 
         <requestFocus />
     </EditText>

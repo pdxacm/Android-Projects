@@ -1,4 +1,11 @@
-url: zipfeed.us
+1. VERY EASY ZIPCODE API
+http://ZiptasticAPI.com/ZIPCODE
+Will return the following for this example:
+http://ziptasticapi.com/97219
+{"country":"US","state":"OR","city":"PORTLAND"}
+In Java, using a JSONArray, and the web DB API which was linked before, this is a breeze to use and parse.
+
+2.url: zipfeed.us
 code: 2xXxE6vH
 
 zipcodes by state http://en.wikipedia.org/wiki/File:ZIP_Code_zones.svg

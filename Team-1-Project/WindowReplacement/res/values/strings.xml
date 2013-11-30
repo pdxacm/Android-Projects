@@ -3,8 +3,13 @@
 
     <string name="app_name">WindowReplacement</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
-	
+    
+    <!-- MainActivity -->
+	<string name="zipHintString">enter zip code</string>
+	<string name="zipCodeString">Zip Code</string>
+	<string name="heatTypeString">Heating Type</string>
+	<string name="monthlyExpenseString">Monthly Expense</string>
+	<string name="nextButtonString">Next</string>	
     <string-array name="energy_source">
         <item>Gas</item>
         <item>Electric</item>

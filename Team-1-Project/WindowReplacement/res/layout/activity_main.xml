@@ -9,18 +9,40 @@
     android:orientation="vertical"
     tools:context=".MainActivity" >
 
+    <TextView 
+        android:id="@+id/zipLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zipCodeString"
+        android:textSize="@dimen/text_view_dimen" />
+    
     <EditText
         android:id="@+id/editText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="97215"
+        android:hint="@string/zipHintString"
         android:inputType="number" />
 
+    <TextView 
+        android:id="@+id/heatTypeLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/heatTypeString"
+        android:textSize="@dimen/text_view_dimen" />
+        
     <Spinner
         android:id="@+id/energySpinner"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" 
-     />
+        android:layout_height="wrap_content" />
+    
+  	<Button 
+  	    android:id="@+id/nextButton"
+  	    android:layout_width="wrap_content"
+  	    android:layout_height="wrap_content"
+  	    android:layout_marginTop="210dp"
+  	    android:layout_marginLeft="220dp"
+  	    android:
+  	    android:text="@string/nextButtonString" />
+    
 
 </LinearLayout>

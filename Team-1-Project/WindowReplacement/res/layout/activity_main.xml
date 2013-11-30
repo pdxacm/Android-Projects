@@ -53,13 +53,10 @@
   	    android:id="@+id/nextButton"
   	    android:layout_width="wrap_content"
   	    android:layout_height="wrap_content"
-<<<<<<< HEAD
   	    android:layout_marginTop="210dp"
   	    android:layout_marginLeft="220dp"
-=======
   	    android:layout_marginTop="10dp"
   	    android:layout_marginLeft="10dp"
->>>>>>> 8f2c618516d5ab68a432eccff282d0deaf6ca0b1
   	    android:text="@string/nextButtonString" />
     
 

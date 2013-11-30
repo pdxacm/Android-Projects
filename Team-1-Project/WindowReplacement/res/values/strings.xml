@@ -5,11 +5,14 @@
     <string name="action_settings">Settings</string>
     
     <!-- MainActivity -->
-	<string name="zipHintString">enter zip code</string>
-	<string name="zipCodeString">Zip Code</string>
+	<string name="stateHintString">enter state</string>
+	<string name="stateString">State</string>
 	<string name="heatTypeString">Heating Type</string>
 	<string name="monthlyExpenseString">Monthly Expense</string>
-	<string name="nextButtonString">Next</string>	
+	<string name="nextButtonString">Next</string>
+	<string name="monthlyCostString">Monthly Heating Cost</string>
+	<string name="monthlyCostHintString">enter monthly heating cost</string>
+		
     <string-array name="energy_source">
         <item>Gas</item>
         <item>Electric</item>

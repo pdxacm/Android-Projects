@@ -10,18 +10,18 @@
     tools:context=".MainActivity" >
 
     <TextView 
-        android:id="@+id/zipLabelTextView"
+        android:id="@+id/stateLabelTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/zipCodeString"
+        android:text="@string/stateString"
         android:textSize="@dimen/text_view_dimen" />
     
     <EditText
         android:id="@+id/editText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/zipHintString"
-        android:inputType="number" />
+        android:hint="@string/stateHintString"
+        android:inputType="text" />
 
     <TextView 
         android:id="@+id/heatTypeLabelTextView"
@@ -35,12 +35,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     
+    <TextView 
+        android:id="@+id/monthlyCostTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/monthlyCostString"
+        android:textSize="@dimen/text_view_dimen" />
+    
+    <EditText
+        android:id="@+id/monthlyCostEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/monthlyCostHintString"
+        android:inputType="number" />
+    
   	<Button 
   	    android:id="@+id/nextButton"
   	    android:layout_width="wrap_content"
   	    android:layout_height="wrap_content"
+<<<<<<< HEAD
   	    android:layout_marginTop="210dp"
   	    android:layout_marginLeft="220dp"
+=======
+  	    android:layout_marginTop="10dp"
+  	    android:layout_marginLeft="10dp"
+>>>>>>> 8f2c618516d5ab68a432eccff282d0deaf6ca0b1
   	    android:text="@string/nextButtonString" />
     
 

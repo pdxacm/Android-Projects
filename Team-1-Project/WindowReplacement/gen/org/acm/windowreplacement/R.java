@@ -31,12 +31,14 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f090005;
+        public static final int action_settings=0x7f090007;
         public static final int editText1=0x7f090001;
         public static final int energySpinner=0x7f090003;
         public static final int heatTypeLabelTextView=0x7f090002;
-        public static final int nextButton=0x7f090004;
-        public static final int zipLabelTextView=0x7f090000;
+        public static final int monthlyCostEditText=0x7f090005;
+        public static final int monthlyCostTextView=0x7f090004;
+        public static final int nextButton=0x7f090006;
+        public static final int stateLabelTextView=0x7f090000;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -48,12 +50,14 @@ public final class R {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
         public static final int heatTypeString=0x7f050004;
+        public static final int monthlyCostHintString=0x7f050008;
+        public static final int monthlyCostString=0x7f050007;
         public static final int monthlyExpenseString=0x7f050005;
         public static final int nextButtonString=0x7f050006;
-        public static final int zipCodeString=0x7f050003;
         /**  MainActivity 
          */
-        public static final int zipHintString=0x7f050002;
+        public static final int stateHintString=0x7f050002;
+        public static final int stateString=0x7f050003;
     }
     public static final class style {
         /** 

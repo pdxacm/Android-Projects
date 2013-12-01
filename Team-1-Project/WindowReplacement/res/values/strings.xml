@@ -13,7 +13,7 @@
 	<string name="monthlyCostString">Monthly Heating Cost</string>
 	<string name="monthlyCostHintString">enter monthly heating cost</string>
 		
-    <string-array name="energy_source">
+    <string-array name="energy_source_string">
         <item>Gas</item>
         <item>Electric</item>
     </string-array>

@@ -9,7 +9,7 @@ package org.acm.windowreplacement;
 
 public final class R {
     public static final class array {
-        public static final int energy_source=0x7f060000;
+        public static final int energy_source_string=0x7f060000;
     }
     public static final class attr {
     }

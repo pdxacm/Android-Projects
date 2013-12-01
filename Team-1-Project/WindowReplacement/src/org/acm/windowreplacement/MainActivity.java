@@ -2,23 +2,32 @@ package org.acm.windowreplacement;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.graphics.Color;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 public class MainActivity extends Activity {
+	
+	EditText state = null;
+	EditText monthlyHeatingCost = null;
 	Spinner spinner = null;
 	Button nextButton = null;
+	Customer currentCustomer = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		//container to hold collected data
+		currentCustomer = new Customer();
 		
 		spinner = (Spinner) findViewById(R.id.energySpinner);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -30,8 +39,17 @@ public class MainActivity extends Activity {
 		// Apply the adapter to the spinner
 		spinner.setAdapter(adapter);
 		
-		setButtonOnClickListeners();
 		addItemSelectedListenerToSpinner();	
+		setButtonOnClickListeners();
+		
+	}
+	
+	//--------------------------------------------------------------
+	//Function: is_valid_state()
+	public boolean is_valid_state(String state){
+		
+		return true;
+		
 	}
 	
 	//--------------------------------------------------------------
@@ -42,21 +60,57 @@ public class MainActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				
+				state = (EditText) findViewById(R.id.editText1);
+				String custState = state.getText().toString();
+				
+				if(is_valid_state(custState))
+				{
+					currentCustomer.set_state(custState);
+				
+					monthlyHeatingCost = (EditText) findViewById(R.id.monthlyCostEditText);
+				
+					try{
+				
+						double monthlyCost = Double.parseDouble(monthlyHeatingCost.getText().toString());
+						currentCustomer.set_monthly_heating_cost(monthlyCost);
+					}
+					catch(NumberFormatException e){
+						
+						//clear the text field and put a red hint of invalid input.
+						monthlyHeatingCost.getText().clear();
+						monthlyHeatingCost.setHintTextColor(Color.parseColor("#FF0000"));
+						monthlyHeatingCost.setHint("Invalid Input");
+					}
+				}
+				else
+				{
+					//clear the text field and put a red hint of invalid input.
+					state.getText().clear();
+					state.setHintTextColor(Color.parseColor("#FF0000"));
+					state.setHint("Invalid State");
+				}
+			
 				
 			}});
+		
 	}
 
 	//------------------------------------------------------------------
 	//Listens for Item selection and then does the function
 	public void addItemSelectedListenerToSpinner(){
 		
-		spinner.setOnItemClickListener(new OnItemClickListener(){
+		spinner.setOnItemSelectedListener(new OnItemSelectedListener(){
 
 			@Override
-			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-					long arg3) {
+			public void onItemSelected(AdapterView<?> arg0, View arg1,
+					int arg2, long arg3) {
+				// TODO Auto-generated method stub
+				currentCustomer.set_heating_type(spinner.getSelectedItem().toString());
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0) {
 				// TODO Auto-generated method stub
 				
 			}});

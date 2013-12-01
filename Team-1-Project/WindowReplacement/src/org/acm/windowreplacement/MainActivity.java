@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -29,9 +31,11 @@ public class MainActivity extends Activity {
 		spinner.setAdapter(adapter);
 		
 		setButtonOnClickListeners();
-		
+		addItemSelectedListenerToSpinner();	
 	}
 	
+	//--------------------------------------------------------------
+	//Listens for button press and then executes the onClick function
 	public void setButtonOnClickListeners(){
 		
 		nextButton.setOnClickListener(new OnClickListener(){
@@ -44,6 +48,21 @@ public class MainActivity extends Activity {
 			}});
 	}
 
+	//------------------------------------------------------------------
+	//Listens for Item selection and then does the function
+	public void addItemSelectedListenerToSpinner(){
+		
+		spinner.setOnItemClickListener(new OnItemClickListener(){
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				
+			}});
+	}
+	
+	//-------------------------------------------------------------------------
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

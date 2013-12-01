@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/monthlyCostHintString"
-        android:inputType="number" />
+        android:inputType="text" />
     
   	<Button 
   	    android:id="@+id/nextButton"

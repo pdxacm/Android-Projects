@@ -1,5 +1,9 @@
 package org.acm.windowreplacement;
 
+import java.util.LinkedList;
+import java.util.List;
+
+
 public class Customer {
 	
 	private String firstName;
@@ -12,7 +16,8 @@ public class Customer {
 	private double windowReplacementCost;
 	private double savingsPerYear;
 	private double returnOnInvestment;
-	
+
+	List<Window> windows;
 	
 	//Constructor
 	public Customer(){
@@ -26,8 +31,54 @@ public class Customer {
 		this.windowReplacementCost = 0;
 		this.savingsPerYear = 0;
 		this.returnOnInvestment = 0;
+		
+		windows = new LinkedList<Window>();
 	}
 	
+	//---------------------------------------------------
+	//Copy Constructor
+	public Customer(Customer toCopy){
+		
+		this.firstName = toCopy.firstName;
+		this.lastName = toCopy.lastName;
+		this.email = toCopy.email;
+		this.state = toCopy.state;
+		this.heatingType = toCopy.heatingType;
+		this.monthlyHeatingCost = toCopy.monthlyHeatingCost;
+		this.windowReplacementCost = toCopy.windowReplacementCost;
+		this.savingsPerYear = toCopy.savingsPerYear;
+		this.returnOnInvestment = toCopy.returnOnInvestment;
+
+		//get the length of the list to copy
+		int listLength = toCopy.windows.size();
+		
+		//copy each element of the toCopy list and then add it to
+		// to the new list.
+		for(int ndx = 0; ndx < listLength; ndx++)
+		{
+			Window copy = new Window(toCopy.windows.get(ndx));
+			this.windows.add(copy);
+		}
+	}
+	
+	//-------------------------------------------------
+	//Function: add_window
+	public boolean add_window(Window toAdd){
+		
+		return this.windows.add(toAdd);
+	}
+	
+	//-------------------------------------------------
+	//Function: get_all_windows
+	//Desc: Creates an array of all window objects in the list and
+	//	then passes the array back to the caller.
+	public Window [] get_all_windows(){
+		
+		Window [] toReturn = this.windows.toArray(new Window[this.windows.size()]);
+		
+		return toReturn;
+		
+	}
 	//-------------------------------------------------
 	//Function: set_first_name
 	public void set_first_name(String firstName){

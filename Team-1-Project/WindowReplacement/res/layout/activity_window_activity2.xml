@@ -1,0 +1,70 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context=".WindowActivity2" >
+
+    <TextView
+        android:id="@+id/windowPaneTypeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/currentWindowPaneTypeString" />
+    
+    <Spinner
+        android:id="@+id/windowPaneTypeSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+        
+    <TextView
+        android:id="@+id/windowFrameTypeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/windowFrameTypeString"
+        android:textSize="@dimen/text_view_dimen" />
+    
+    <Spinner 
+        android:id="@+id/windowFrameTypeSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    
+    <TextView
+        android:id="@+id/windowSizeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/windowSizeString"
+        android:textSize="@dimen/text_view_dimen" />
+    
+    <EditText
+        android:id="@+id/windowSizeTextEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/windowSizeHintString"
+		android:inputType="text" />
+    
+    <TextView
+        android:id="@+id/windowQuantityTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/windowQuantityString"
+        android:textSize="@dimen/text_view_dimen" />
+    
+    <EditText 
+        android:id="@+id/windowQuantityEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/windowQuantityHintString"
+        android:inputType="text" />
+    
+    <Button 
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nextButtonString" />
+    
+
+</LinearLayout>

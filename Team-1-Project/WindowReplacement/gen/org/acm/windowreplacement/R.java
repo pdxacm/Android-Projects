@@ -10,6 +10,8 @@ package org.acm.windowreplacement;
 public final class R {
     public static final class array {
         public static final int energy_source_string=0x7f060000;
+        public static final int window_frame_type_string_array=0x7f060002;
+        public static final int window_pane_type_string_array=0x7f060001;
     }
     public static final class attr {
     }
@@ -31,7 +33,7 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f090007;
+        public static final int action_settings=0x7f09000f;
         public static final int editText1=0x7f090001;
         public static final int energySpinner=0x7f090003;
         public static final int heatTypeLabelTextView=0x7f090002;
@@ -39,16 +41,27 @@ public final class R {
         public static final int monthlyCostTextView=0x7f090004;
         public static final int nextButton=0x7f090006;
         public static final int stateLabelTextView=0x7f090000;
+        public static final int windowFrameTypeSpinner=0x7f09000a;
+        public static final int windowFrameTypeTextView=0x7f090009;
+        public static final int windowPaneTypeSpinner=0x7f090008;
+        public static final int windowPaneTypeTextView=0x7f090007;
+        public static final int windowQuantityEditText=0x7f09000e;
+        public static final int windowQuantityTextView=0x7f09000d;
+        public static final int windowSizeTextEdit=0x7f09000c;
+        public static final int windowSizeTextView=0x7f09000b;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
+        public static final int activity_window_activity2=0x7f030001;
     }
     public static final class menu {
         public static final int main=0x7f080000;
+        public static final int window_activity2=0x7f080001;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
+        public static final int currentWindowPaneTypeString=0x7f05000a;
         public static final int heatTypeString=0x7f050004;
         public static final int monthlyCostHintString=0x7f050008;
         public static final int monthlyCostString=0x7f050007;
@@ -58,6 +71,14 @@ public final class R {
          */
         public static final int stateHintString=0x7f050002;
         public static final int stateString=0x7f050003;
+        /**  WindowActivity2 
+         */
+        public static final int title_activity_window_activity2=0x7f050009;
+        public static final int windowFrameTypeString=0x7f05000b;
+        public static final int windowQuantityHintString=0x7f05000f;
+        public static final int windowQuantityString=0x7f05000e;
+        public static final int windowSizeHintString=0x7f05000d;
+        public static final int windowSizeString=0x7f05000c;
     }
     public static final class style {
         /** 

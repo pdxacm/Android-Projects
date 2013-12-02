@@ -3,19 +3,44 @@
 
     <string name="app_name">WindowReplacement</string>
     <string name="action_settings">Settings</string>
-    
+
     <!-- MainActivity -->
-	<string name="stateHintString">enter state</string>
-	<string name="stateString">State</string>
-	<string name="heatTypeString">Heating Type</string>
-	<string name="monthlyExpenseString">Monthly Expense</string>
-	<string name="nextButtonString">Next</string>
-	<string name="monthlyCostString">Monthly Heating Cost</string>
-	<string name="monthlyCostHintString">enter monthly heating cost</string>
-		
+    <string name="stateHintString">enter state</string>
+    <string name="stateString">State</string>
+    <string name="heatTypeString">Heating Type</string>
+    <string name="monthlyExpenseString">Monthly Expense</string>
+    <string name="nextButtonString">Next</string>
+    <string name="monthlyCostString">Monthly Heating Cost</string>
+    <string name="monthlyCostHintString">enter monthly heating cost</string>
+
     <string-array name="energy_source_string">
         <item>Gas</item>
         <item>Electric</item>
     </string-array>
+
+    <!-- WindowActivity2 -->
+    <string name="title_activity_window_activity2">WindowActivity2</string>
+    <string name="currentWindowPaneTypeString">Current Window Pane Type</string>
+    
+    <string-array name="window_pane_type_string_array">
+        <item>Single</item>
+        <item>Double</item>
+        <item>Divided</item>
+        <item>Energy Efficient</item>
+        <item>Protective</item>
+    </string-array>
+    
+    <string name="windowFrameTypeString">Current Window Frame Type</string>
+    
+    <string-array name="window_frame_type_string_array">
+        <item>Wood</item>
+        <item>Vinyl</item>
+        <item>Aluminum</item>
+    </string-array>
+    
+    <string name="windowSizeString">Window Size</string>
+    <string name="windowSizeHintString">enter window size</string>
+    <string name="windowQuantityString">Window Quantity</string>
+    <string name="windowQuantityHintString">enter the quantity of windows</string>
 
 </resources>

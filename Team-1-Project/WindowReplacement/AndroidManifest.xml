@@ -25,6 +25,10 @@
         <activity
             android:name="org.acm.windowreplacement.WindowActivity2"
             android:label="@string/title_activity_window_activity2" >
+            <intent-filter >
+                <action android:name="org.acm.windowreplacement.WindowActivity2" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
     </application>
 

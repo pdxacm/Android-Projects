@@ -5,6 +5,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     
     <!-- MainActivity -->
+    <dimen name="text_view_long_dimen">10pt</dimen>
 	<dimen name="text_view_dimen">12pt</dimen>
 	<dimen name="edit_text_dimen">12pt</dimen>
 </resources>

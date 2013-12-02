@@ -3,8 +3,11 @@ package org.acm.windowreplacement;
 import java.util.LinkedList;
 import java.util.List;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class Customer {
+
+public class Customer implements Parcelable{
 	
 	private String firstName;
 	private String lastName;
@@ -35,6 +38,10 @@ public class Customer {
 		windows = new LinkedList<Window>();
 	}
 	
+	//---------------------------------------------------
+	public Customer(Parcel parcel){
+		readFromParcel(parcel);
+	}
 	//---------------------------------------------------
 	//Copy Constructor
 	public Customer(Customer toCopy){
@@ -206,4 +213,54 @@ public class Customer {
 		
 		return this.returnOnInvestment;
 	}
+
+	@Override
+	public int describeContents() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int arg1) {
+		
+		dest.writeString(this.firstName);
+		dest.writeString(this.lastName);
+		dest.writeString(this.email);
+		dest.writeString(this.state);
+		dest.writeString(this.heatingType);
+		dest.writeDouble(this.monthlyHeatingCost);
+		dest.writeDouble(this.windowReplacementCost);
+		dest.writeDouble(this.savingsPerYear);
+		dest.writeDouble(this.returnOnInvestment);
+		dest.writeList(this.windows);
+	}
+	
+	public void readFromParcel(Parcel in){
+		
+		this.firstName = in.readString();
+		this.lastName = in.readString();
+		this.email = in.readString();
+		this.state = in.readString();
+		this.heatingType = in.readString();
+		this.monthlyHeatingCost = in.readDouble();
+		this.windowReplacementCost = in.readDouble();
+		this.savingsPerYear = in.readDouble();
+		this.returnOnInvestment = in.readDouble();
+		in.readList(this.windows, getClass().getClassLoader());
+	}
+	
+	public static final Parcelable.Creator<Customer> creator = new Parcelable.Creator<Customer>() {
+
+		@Override
+		public Customer createFromParcel(Parcel source) {
+			// TODO Auto-generated method stub
+			return new Customer(source);
+		}
+
+		@Override
+		public Customer[] newArray(int size) {
+			// TODO Auto-generated method stub
+			return new Customer[size];
+		}
+	};
 }

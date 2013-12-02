@@ -1,8 +1,12 @@
 package org.acm.windowreplacement;
 
-public class Window {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Window implements Parcelable {
 	
-	private String windowType;
+	private String windowPaneType;
+	private String windowFrameType;
 	private int windowWidth;
 	private int windowHeight;
 	private int windowQty;
@@ -11,34 +15,57 @@ public class Window {
 	//Function: Constructor
 	public Window(){
 		
-		this.windowType = "";
+		this.windowPaneType = "";
+		this.windowFrameType = "";
 		this.windowWidth = 0;
 		this.windowHeight = 0;
 		this.windowQty = 0;
+	}
+	
+	//---------------------------------------------
+	//Function: Parcel Constructor
+	public Window(Parcel parcel){
+		
+		readFromParcel(parcel);
 	}
 	
 	//----------------------------------------------
 	//Function: copy Constructor
 	public Window(Window toCopy){
 		
-		this.windowType = toCopy.windowType;
+		this.windowPaneType = toCopy.windowPaneType;
+		this.windowFrameType = toCopy.windowFrameType;
 		this.windowWidth = toCopy.windowWidth;
 		this.windowHeight = toCopy.windowHeight;
 		this.windowQty = toCopy.windowQty;
 	}
 	
 	//----------------------------------------------
-	//Function: set_window_type
-	public void set_window_type(String type){
+	//Function: set_window_pane_type
+	public void set_window_pane_type(String type){
 		
-		this.windowType = type;
+		this.windowPaneType = type;
 	}
 
 	//-----------------------------------------------
-	//Function: get_window_type
-	public String get_window_type(){
+	//Function: get_window_pane_type
+	public String get_window_pane_type(){
 		
-		return this.windowType;
+		return this.windowPaneType;
+	}
+	
+	//-----------------------------------------------
+	//Function: set_window_frame_type
+	public void set_window_frame_type(String type){
+		
+		this.windowFrameType = type;
+	}
+	
+	//------------------------------------------------
+	//Function: get_window_frame_type
+	public String get_window_frame_type(){
+		
+		return this.windowFrameType;
 	}
 	
 	//-----------------------------------------------
@@ -82,5 +109,45 @@ public class Window {
 		
 		return this.windowQty;
 	}
+
+	@Override
+	public int describeContents() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		// TODO Auto-generated method stub
+		
+		dest.writeString(this.windowPaneType);
+		dest.writeString(this.windowFrameType);
+		dest.writeInt(this.windowWidth);
+		dest.writeInt(this.windowHeight);
+		dest.writeInt(this.windowQty);
+	}
 	
+	private void readFromParcel(Parcel in){
+		
+		this.windowPaneType = in.readString();
+		this.windowFrameType = in.readString();
+		this.windowWidth = in.readInt();
+		this.windowHeight = in.readInt();
+		this.windowQty = in.readInt();
+	}
+	
+	public static final Parcelable.Creator<Window> creator = new Parcelable.Creator<Window>() {
+
+		@Override
+		public Window createFromParcel(Parcel source) {
+			// TODO Auto-generated method stub
+			return new Window(source);
+		}
+
+		@Override
+		public Window[] newArray(int size) {
+			// TODO Auto-generated method stub
+			return new Window[size];
+		}
+	};
 }

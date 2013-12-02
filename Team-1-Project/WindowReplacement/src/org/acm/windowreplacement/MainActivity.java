@@ -2,6 +2,7 @@ package org.acm.windowreplacement;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.Menu;
 import android.view.View;
@@ -74,6 +75,9 @@ public class MainActivity extends Activity {
 				
 						double monthlyCost = Double.parseDouble(monthlyHeatingCost.getText().toString());
 						currentCustomer.set_monthly_heating_cost(monthlyCost);
+						Intent intent = new Intent("org.acm.windowreplacement.WindowActivity2");
+						intent.putExtra("org.acm.windowreplacement.currentCustomer", currentCustomer);
+						startActivity(intent);
 					}
 					catch(NumberFormatException e){
 						

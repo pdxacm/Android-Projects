@@ -74,7 +74,7 @@ public class MainActivity extends Activity {
 		
 		// Open the file
 		try {
-			br = new BufferedReader(new FileReader("res/states.txt"));
+			br = new BufferedReader(new FileReader("res/raw/states.txt"));
 		} catch (FileNotFoundException e) {
 			System.out.println("failed at opening buffer reader");
 			e.printStackTrace();

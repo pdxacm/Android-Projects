@@ -1,5 +1,10 @@
 package org.acm.windowreplacement;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -46,11 +51,51 @@ public class MainActivity extends Activity {
 	}
 	
 	//--------------------------------------------------------------
-	//Function: is_valid_state()
+	// Function: is_valid_state()
+	// Purpose: Runs through an array of 50 states 
 	public boolean is_valid_state(String state){
+		boolean valid = false;
 		
-		return true;
+		String [] stateArray = fill_state_array();
+		for(int i = 0; i < stateArray.length; i++) {
+			if(state.toLowerCase() == stateArray[i].toLowerCase()) {
+				valid = true;
+			}
+		}
+		return valid;
+	}
+	
+	// Function: fill_state_array()
+	// Purpose: Reads in states from text file
+	public String [] fill_state_array() {
+		BufferedReader br = null;
+		String [] stateArray = new String[50];
+		try {
+			br = new BufferedReader(new FileReader("res/states.txt"));
+		} catch (FileNotFoundException e) {
+			System.out.println("failed at opening buffer reader");
+			e.printStackTrace();
+		}
+		String line = null;
+		try {
+			int i = 0;
+			while ((line = br.readLine()) != null) {
+				stateArray[i] = line;	
+			}
+		} catch (IOException e) {
+			System.out.println("failed while reading in states");
+			e.printStackTrace();
+		}
 		
+		
+		try {
+			br.close();
+		} catch (IOException e) {
+			System.out.println("buffer reader failed to close");
+			e.printStackTrace();
+		}
+		
+		return stateArray;
 	}
 	
 	//--------------------------------------------------------------

@@ -55,8 +55,9 @@ public class MainActivity extends Activity {
 	// Purpose: Runs through an array of 50 states 
 	public boolean is_valid_state(String state){
 		boolean valid = false;
-		
 		String [] stateArray = fill_state_array();
+		
+		// Scan array to check if 
 		for(int i = 0; i < stateArray.length; i++) {
 			if(state.toLowerCase() == stateArray[i].toLowerCase()) {
 				valid = true;
@@ -70,12 +71,16 @@ public class MainActivity extends Activity {
 	public String [] fill_state_array() {
 		BufferedReader br = null;
 		String [] stateArray = new String[50];
+		
+		// Open the file
 		try {
 			br = new BufferedReader(new FileReader("res/states.txt"));
 		} catch (FileNotFoundException e) {
 			System.out.println("failed at opening buffer reader");
 			e.printStackTrace();
 		}
+		
+		// Read in the file to an array line by line
 		String line = null;
 		try {
 			int i = 0;
@@ -87,7 +92,7 @@ public class MainActivity extends Activity {
 			e.printStackTrace();
 		}
 		
-		
+		// Close buffer reader
 		try {
 			br.close();
 		} catch (IOException e) {

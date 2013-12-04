@@ -4,10 +4,13 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.view.Menu;
 import android.view.View;
@@ -55,11 +58,17 @@ public class MainActivity extends Activity {
 	// Purpose: Runs through an array of 50 states 
 	public boolean is_valid_state(String state){
 		boolean valid = false;
-		String [] stateArray = fill_state_array();
+		String[] stateArray = null;
+		try {
+			stateArray = fill_state_array();
+		} catch (FileNotFoundException e) {
+			System.out.println("failed at calling fill_state_array()");
+			e.printStackTrace();
+		}
 		
 		// Scan array to check if 
 		for(int i = 0; i < stateArray.length; i++) {
-			if(state.toLowerCase() == stateArray[i].toLowerCase()) {
+			if(state.toLowerCase().equals(stateArray[i].toLowerCase())) {
 				valid = true;
 			}
 		}
@@ -68,17 +77,11 @@ public class MainActivity extends Activity {
 	
 	// Function: fill_state_array()
 	// Purpose: Reads in states from text file
-	public String [] fill_state_array() {
+	public String [] fill_state_array() throws FileNotFoundException {
 		BufferedReader br = null;
 		String [] stateArray = new String[50];
-		
-		// Open the file
-		try {
-			br = new BufferedReader(new FileReader("res/raw/states.txt"));
-		} catch (FileNotFoundException e) {
-			System.out.println("failed at opening buffer reader");
-			e.printStackTrace();
-		}
+		InputStream is = getResources().openRawResource(R.raw.states);
+		br = new BufferedReader(new InputStreamReader(is));
 		
 		// Read in the file to an array line by line
 		String line = null;
@@ -86,6 +89,7 @@ public class MainActivity extends Activity {
 			int i = 0;
 			while ((line = br.readLine()) != null) {
 				stateArray[i] = line;	
+				i++;
 			}
 		} catch (IOException e) {
 			System.out.println("failed while reading in states");

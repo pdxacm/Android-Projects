@@ -2,15 +2,12 @@ package org.acm.windowreplacement;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.view.Menu;
 import android.view.View;
@@ -66,7 +63,7 @@ public class MainActivity extends Activity {
 			e.printStackTrace();
 		}
 		
-		// Scan array to check if 
+		// Scan array to check for a match
 		for(int i = 0; i < stateArray.length; i++) {
 			if(state.toLowerCase().equals(stateArray[i].toLowerCase())) {
 				valid = true;
@@ -80,8 +77,8 @@ public class MainActivity extends Activity {
 	public String [] fill_state_array() throws FileNotFoundException {
 		BufferedReader br = null;
 		String [] stateArray = new String[50];
-		InputStream is = getResources().openRawResource(R.raw.states);
-		br = new BufferedReader(new InputStreamReader(is));
+		InputStream inputStream = getResources().openRawResource(R.raw.states);
+		br = new BufferedReader(new InputStreamReader(inputStream));
 		
 		// Read in the file to an array line by line
 		String line = null;

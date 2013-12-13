@@ -71,8 +71,8 @@ public class Customer implements Parcelable{
 	//-------------------------------------------------
 	//Function: add_window
 	public boolean add_window(Window toAdd){
-		
-		return this.windows.add(toAdd);
+		return true;
+		//return this.windows.add(toAdd);
 	}
 	
 	//-------------------------------------------------
@@ -248,7 +248,7 @@ public class Customer implements Parcelable{
 		in.readList(this.windows, getClass().getClassLoader());
 	}
 	
-	public static final Parcelable.Creator<Customer> creator = new Parcelable.Creator<Customer>() {
+	public static final Parcelable.Creator<Customer> CREATOR = new Parcelable.Creator<Customer>() {
 
 		@Override
 		public Customer createFromParcel(Parcel source) {

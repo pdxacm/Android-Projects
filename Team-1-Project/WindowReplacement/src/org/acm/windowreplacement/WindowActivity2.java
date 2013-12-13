@@ -1,5 +1,6 @@
 package org.acm.windowreplacement;
 
+import android.os.BadParcelableException;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -17,11 +18,19 @@ public class WindowActivity2 extends Activity {
 	Spinner windowPaneTypeSpinner = null;
 	Spinner windowFrameTypeSpinner = null;
 	Button nextButton = null;
+	Customer currentCustomer = null;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_window_activity2);
-		
+		try{
+		currentCustomer = getIntent().getExtras().getParcelable("currentCustomer");
+		}
+		catch(BadParcelableException e){
+			e.printStackTrace();
+			
+		}
 		windowPaneTypeSpinner = (Spinner) findViewById(R.id.windowPaneTypeSpinner);
 		windowFrameTypeSpinner = (Spinner) findViewById(R.id.windowFrameTypeSpinner);
 		

@@ -1,16 +1,14 @@
 package org.acm.windowreplacement;
 
-import android.os.BadParcelableException;
 import android.os.Bundle;
+import android.os.Parcel;
 import android.app.Activity;
-import android.content.Intent;
-import android.graphics.Color;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
 
 public class WindowActivity2 extends Activity {
@@ -24,13 +22,32 @@ public class WindowActivity2 extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_window_activity2);
-		try{
-		currentCustomer = getIntent().getExtras().getParcelable("currentCustomer");
+		
+		//We need to get the bundle from the last intent 
+		Bundle thisBundle = getIntent().getExtras();
+		
+		currentCustomer  = thisBundle.getParcelable("org.acm.windowreplacement.Customer");
+		
+		if(currentCustomer == null){
+			Log.w("currentCustomer", "is null");
 		}
-		catch(BadParcelableException e){
-			e.printStackTrace();
+		if(currentCustomer != null){
 			
+			Log.w("currentCustomer", "Not equal to null");
+		
+			if(currentCustomer.get_state() != null){
+				Log.w("state", currentCustomer.get_state());
+			}
+			else{
+				Log.w("state", "state not set in activityMain");
+			}
 		}
+		else{
+			Log.w("currentCustomer", "currentCustomer is null");
+		}
+		//Log.w("monthlyHeatingCost", Double.toString(currentCustomer.get_monthly_heating_cost()));
+		//Log.w("Type", currentCustomer.get_heating_type());
+		
 		windowPaneTypeSpinner = (Spinner) findViewById(R.id.windowPaneTypeSpinner);
 		windowFrameTypeSpinner = (Spinner) findViewById(R.id.windowFrameTypeSpinner);
 		

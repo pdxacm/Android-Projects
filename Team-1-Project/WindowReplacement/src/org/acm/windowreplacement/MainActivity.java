@@ -127,7 +127,7 @@ public class MainActivity extends Activity {
 						double monthlyCost = Double.parseDouble(monthlyHeatingCost.getText().toString());
 						currentCustomer.set_monthly_heating_cost(monthlyCost);
 						Intent intent = new Intent("org.acm.windowreplacement.WindowActivity2");
-						intent.putExtra("org.acm.windowreplacement.currentCustomer", currentCustomer);
+						intent.putExtra("org.acm.windowreplacement.Customer", currentCustomer);
 						startActivity(intent);
 					}
 					catch(NumberFormatException e){

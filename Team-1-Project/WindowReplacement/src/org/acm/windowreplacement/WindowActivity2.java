@@ -1,14 +1,13 @@
 package org.acm.windowreplacement;
 
 import android.os.Bundle;
-import android.os.Parcel;
 import android.app.Activity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 public class WindowActivity2 extends Activity {
@@ -59,8 +58,9 @@ public void setButtonOnClickListeners(){
 
 			@Override
 			public void onClick(View v) {
+				int windowWidth = 0;
+				int windowHeight = 0;
 				
-			
 	
 			}});
 		

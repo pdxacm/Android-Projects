@@ -34,7 +34,7 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a000f;
+        public static final int action_settings=0x7f0a0010;
         public static final int editText1=0x7f0a0001;
         public static final int energySpinner=0x7f0a0003;
         public static final int heatTypeLabelTextView=0x7f0a0002;
@@ -44,12 +44,13 @@ public final class R {
         public static final int stateLabelTextView=0x7f0a0000;
         public static final int windowFrameTypeSpinner=0x7f0a000a;
         public static final int windowFrameTypeTextView=0x7f0a0009;
+        public static final int windowHeightTextEdit=0x7f0a000c;
         public static final int windowPaneTypeSpinner=0x7f0a0008;
         public static final int windowPaneTypeTextView=0x7f0a0007;
-        public static final int windowQuantityEditText=0x7f0a000e;
-        public static final int windowQuantityTextView=0x7f0a000d;
-        public static final int windowSizeTextEdit=0x7f0a000c;
+        public static final int windowQuantityEditText=0x7f0a000f;
+        public static final int windowQuantityTextView=0x7f0a000e;
         public static final int windowSizeTextView=0x7f0a000b;
+        public static final int windowWidthTextEdit=0x7f0a000d;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -79,10 +80,12 @@ public final class R {
          */
         public static final int title_activity_window_activity2=0x7f060009;
         public static final int windowFrameTypeString=0x7f06000b;
-        public static final int windowQuantityHintString=0x7f06000f;
-        public static final int windowQuantityString=0x7f06000e;
+        public static final int windowHeightHint=0x7f06000e;
+        public static final int windowQuantityHintString=0x7f060011;
+        public static final int windowQuantityString=0x7f060010;
         public static final int windowSizeHintString=0x7f06000d;
         public static final int windowSizeString=0x7f06000c;
+        public static final int windowWidthHint=0x7f06000f;
     }
     public static final class style {
         /** 

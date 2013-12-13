@@ -40,6 +40,8 @@
     
     <string name="windowSizeString">Window Size</string>
     <string name="windowSizeHintString">enter window size</string>
+    <string name="windowHeightHint">height inches</string>
+    <string name="windowWidthHint">width inches</string>
     <string name="windowQuantityString">Window Quantity</string>
     <string name="windowQuantityHintString">enter the quantity of windows</string>
 

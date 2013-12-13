@@ -70,6 +70,7 @@ public class MainActivity extends Activity {
 			}
 		}
 		// costumer.new
+		// seans new comment
 		currentCustomer.set_state(state);
 		// Comment
 		return valid;

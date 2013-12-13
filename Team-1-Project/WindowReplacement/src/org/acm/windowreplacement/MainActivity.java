@@ -69,7 +69,9 @@ public class MainActivity extends Activity {
 				valid = true;
 			}
 		}
+		// costumer.new
 		currentCustomer.set_state(state);
+		// Comment
 		return valid;
 	}
 	

@@ -52,7 +52,7 @@ public class MainActivity extends Activity {
 	
 	//--------------------------------------------------------------
 	// Function: is_valid_state()
-	// Purpose: Runs through an array of 50 states 
+	// Purpose: Runs through an array of 50 states.
 	public boolean is_valid_state(String state){
 		boolean valid = false;
 		String[] stateArray = null;

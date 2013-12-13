@@ -40,12 +40,26 @@
         android:text="@string/windowSizeString"
         android:textSize="@dimen/text_view_dimen" />
     
-    <EditText
-        android:id="@+id/windowSizeTextEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/windowSizeHintString"
-		android:inputType="text" />
+    <RelativeLayout
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content" >
+	    <EditText
+	        android:id="@+id/windowHeightTextEdit"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:hint="@string/windowHeightHint"
+			android:inputType="number" />
+
+	    <EditText
+	        android:id="@+id/windowWidthTextEdit"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentTop="true"
+	        android:layout_toRightOf="@+id/windowHeightTextEdit"
+	        android:hint="@string/windowWidthHint"
+	        android:inputType="number" >
+	    </EditText>
+	</RelativeLayout>
     
     <TextView
         android:id="@+id/windowQuantityTextView"

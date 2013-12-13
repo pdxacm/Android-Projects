@@ -196,7 +196,6 @@ public class Customer implements Parcelable{
 	//----------------------------------------------------------------
 	//Function get_savings_per_year
 	public double get_savings_per_year(){
-		
 		return this.savingsPerYear;
 	}
 	

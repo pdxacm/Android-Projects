@@ -69,11 +69,6 @@ public class MainActivity extends Activity {
 				valid = true;
 			}
 		}
-		// costumer.new
-		// seans new comment
-		currentCustomer.set_state(state);
-		// Commen
-		// butt!
 		return valid;
 	}
 	

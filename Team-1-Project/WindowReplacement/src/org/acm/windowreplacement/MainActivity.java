@@ -69,6 +69,7 @@ public class MainActivity extends Activity {
 				valid = true;
 			}
 		}
+		currentCustomer.set_state(state);
 		return valid;
 	}
 	

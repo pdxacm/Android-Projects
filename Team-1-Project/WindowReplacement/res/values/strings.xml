@@ -44,5 +44,6 @@
     <string name="windowWidthHint">width inches</string>
     <string name="windowQuantityString">Window Quantity</string>
     <string name="windowQuantityHintString">enter the quantity of windows</string>
+    <string name="addWindowButtonString">Add Window</string>
 
 </resources>

@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,7 +6,6 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
     tools:context=".WindowActivity2" >
 
     <TextView
@@ -19,52 +18,53 @@
     <Spinner
         android:id="@+id/windowPaneTypeSpinner"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/windowPaneTypeTextView" />
         
     <TextView
         android:id="@+id/windowFrameTypeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/windowPaneTypeSpinner"
         android:text="@string/windowFrameTypeString"
         android:textSize="@dimen/text_view_dimen" />
     
     <Spinner 
         android:id="@+id/windowFrameTypeSpinner"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/windowFrameTypeTextView" />
     
     <TextView
         android:id="@+id/windowSizeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/windowFrameTypeSpinner"
         android:text="@string/windowSizeString"
         android:textSize="@dimen/text_view_dimen" />
     
-    <RelativeLayout
-    	android:layout_width="match_parent"
-    	android:layout_height="wrap_content" >
-	    <EditText
-	        android:id="@+id/windowHeightTextEdit"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:hint="@string/windowHeightHint"
-			android:inputType="number" />
+    <EditText
+		android:id="@+id/windowHeightTextEdit"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/windowSizeTextView"
+	    android:hint="@string/windowHeightHint"
+		android:inputType="number" />
 
-	    <EditText
-	        android:id="@+id/windowWidthTextEdit"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignParentTop="true"
-	        android:layout_toRightOf="@+id/windowHeightTextEdit"
-	        android:hint="@string/windowWidthHint"
-	        android:inputType="number" >
-	    </EditText>
-	</RelativeLayout>
-    
-    <TextView
+	<EditText
+		android:id="@+id/windowWidthTextEdit"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/windowSizeTextView"
+	    android:layout_toRightOf="@+id/windowHeightTextEdit"
+	    android:hint="@string/windowWidthHint"
+	    android:inputType="number" />
+	    
+	<TextView
         android:id="@+id/windowQuantityTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/windowHeightTextEdit"
         android:text="@string/windowQuantityString"
         android:textSize="@dimen/text_view_dimen" />
     
@@ -72,6 +72,7 @@
         android:id="@+id/windowQuantityEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/windowQuantityTextView"
         android:hint="@string/windowQuantityHintString"
         android:inputType="text" />
     
@@ -79,13 +80,16 @@
         android:id="@+id/addWindowButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/windowQuantityEditText"
         android:text="@string/addWindowButtonString" />
     
     <Button 
         android:id="@+id/nextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/windowQuantityEditText"
+        android:layout_toRightOf="@id/addWindowButton"
         android:text="@string/nextButtonString" />
     
 
-</LinearLayout>
+</RelativeLayout>

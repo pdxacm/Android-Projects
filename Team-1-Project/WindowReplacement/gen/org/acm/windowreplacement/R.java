@@ -34,7 +34,8 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0010;
+        public static final int action_settings=0x7f0a0011;
+        public static final int addWindowButton=0x7f0a0010;
         public static final int editText1=0x7f0a0001;
         public static final int energySpinner=0x7f0a0003;
         public static final int heatTypeLabelTextView=0x7f0a0002;
@@ -65,6 +66,7 @@ public final class R {
     }
     public static final class string {
         public static final int action_settings=0x7f060001;
+        public static final int addWindowButtonString=0x7f060012;
         public static final int app_name=0x7f060000;
         public static final int currentWindowPaneTypeString=0x7f06000a;
         public static final int heatTypeString=0x7f060004;

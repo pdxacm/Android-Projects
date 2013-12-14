@@ -136,7 +136,7 @@ public class Window implements Parcelable {
 		this.windowQty = in.readInt();
 	}
 	
-	public static final Parcelable.Creator<Window> creator = new Parcelable.Creator<Window>() {
+	public static final Parcelable.Creator<Window> CREATOR = new Parcelable.Creator<Window>() {
 
 		@Override
 		public Window createFromParcel(Parcel source) {

@@ -76,6 +76,12 @@
         android:inputType="text" />
     
     <Button 
+        android:id="@+id/addWindowButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addWindowButtonString" />
+    
+    <Button 
         android:id="@+id/nextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

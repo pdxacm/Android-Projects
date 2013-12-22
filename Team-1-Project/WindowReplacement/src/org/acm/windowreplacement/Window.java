@@ -7,8 +7,8 @@ public class Window implements Parcelable {
 	
 	private String windowPaneType;
 	private String windowFrameType;
-	private int windowWidth;
-	private int windowHeight;
+	private float windowWidth;
+	private float windowHeight;
 	private int windowQty;
 	
 	//-------------------------------------------
@@ -70,28 +70,28 @@ public class Window implements Parcelable {
 	
 	//-----------------------------------------------
 	//Function: set_windowWidth
-	public void set_window_width(int width){
+	public void set_window_width(float width){
 		
 		this.windowWidth = width;
 	}
 	
 	//------------------------------------------------
 	//Function: get_window_width
-	public int get_window_width(){
+	public float get_window_width(){
 		
 		return this.windowWidth;
 	}
 	
 	//------------------------------------------------
 	//Function: set_window_height
-	public void set_window_height(int height){
+	public void set_window_height(float height){
 		
 		this.windowHeight = height;
 	}
 	
 	//------------------------------------------------
 	//Function: get_window_height
-	public int get_window_height(){
+	public float get_window_height(){
 		
 		return this.windowHeight;
 	}
@@ -122,8 +122,8 @@ public class Window implements Parcelable {
 		
 		dest.writeString(this.windowPaneType);
 		dest.writeString(this.windowFrameType);
-		dest.writeInt(this.windowWidth);
-		dest.writeInt(this.windowHeight);
+		dest.writeFloat(this.windowWidth);
+		dest.writeFloat(this.windowHeight);
 		dest.writeInt(this.windowQty);
 	}
 	
@@ -131,8 +131,8 @@ public class Window implements Parcelable {
 		
 		this.windowPaneType = in.readString();
 		this.windowFrameType = in.readString();
-		this.windowWidth = in.readInt();
-		this.windowHeight = in.readInt();
+		this.windowWidth = in.readFloat();
+		this.windowHeight = in.readFloat();
 		this.windowQty = in.readInt();
 	}
 	

@@ -118,8 +118,7 @@ public class MainActivity extends Activity {
 				
 				if(is_valid_state(custState))
 				{
-					currentCustomer.set_state(custState);
-				
+					currentCustomer.set_state(custState);		
 					monthlyHeatingCost = (EditText) findViewById(R.id.monthlyCostEditText);
 				
 					try{

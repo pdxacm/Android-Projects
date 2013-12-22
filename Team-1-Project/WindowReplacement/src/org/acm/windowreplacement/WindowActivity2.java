@@ -2,6 +2,9 @@ package org.acm.windowreplacement;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -9,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class WindowActivity2 extends Activity {
 
@@ -20,6 +24,7 @@ public class WindowActivity2 extends Activity {
 	EditText windowHeightEditText = null;
 	EditText windowWidthEditText = null;
 	EditText windowQuantityEditText = null;
+	AlertDialog.Builder invalidInputAlert = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +46,24 @@ public class WindowActivity2 extends Activity {
 		windowHeightEditText = (EditText) findViewById(R.id.windowHeightTextEdit);
 		windowWidthEditText  = (EditText) findViewById(R.id.windowWidthTextEdit);
 		windowQuantityEditText = (EditText) findViewById(R.id.windowQuantityEditText);
-		
+				
 		// Call listener
 		setButtonOnClickListeners();
 	}
-	
+
+	private void invalidInputAlertCreator(String errorMessage) {
+		invalidInputAlert = new AlertDialog.Builder(this);
+		invalidInputAlert.setMessage(errorMessage)
+	       .setCancelable(false)
+	       .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+	           public void onClick(DialogInterface dialog, int id) {
+	               dialog.cancel();
+	           }
+	       });
+		AlertDialog alert = invalidInputAlert.create();
+		alert.show();
+	}
+
 	public void initializeSpinners(){
 		windowPaneTypeSpinner = (Spinner) findViewById(R.id.windowPaneTypeSpinner);
 		windowFrameTypeSpinner = (Spinner) findViewById(R.id.windowFrameTypeSpinner);
@@ -77,6 +95,7 @@ public class WindowActivity2 extends Activity {
 			@Override
 			public void onClick(View v) {
 				Window toAdd = new Window();
+				
 				try {
 					float windowHeight = Float.parseFloat(windowHeightEditText.getText().toString());
 					toAdd.set_window_height(windowHeight);
@@ -86,6 +105,9 @@ public class WindowActivity2 extends Activity {
 					
 					int windowQuantity = Integer.parseInt(windowQuantityEditText.getText().toString());
 					toAdd.set_window_quantity(windowQuantity);
+					if(windowQuantity < 1) {
+						throw new QuantityException();
+					}
 					
 					String windowPaneType  = windowPaneTypeSpinner.getSelectedItem().toString();
 					toAdd.set_window_pane_type(windowPaneType);
@@ -95,12 +117,27 @@ public class WindowActivity2 extends Activity {
 					
 					currentCustomer.add_window(toAdd);
 				} 
+				catch (QuantityException e) {
+					windowQuantityEditText.getText().clear();
+					invalidInputAlertCreator("Please enter a quantity of one or greater");
+				}
 				catch(NumberFormatException e) {
 					toAdd = null;
-				}
-				System.out.println(toAdd.get_window_frame_type());
+					windowHeightEditText.getText().clear();
+					windowWidthEditText.getText().clear();
+					windowQuantityEditText.getText().clear();
+					invalidInputAlertCreator("Invalid Input");
+				} 
+				
 			}	
 		});
+	}
+	
+	public class QuantityException extends Exception {
+		private static final long serialVersionUID = 1L;
+		public QuantityException() {
+	        super();
+	    }
 	}
 
 }

@@ -51,6 +51,7 @@ public class WindowActivity2 extends Activity {
 		setButtonOnClickListeners();
 	}
 
+	// Create a pop up error message
 	private void invalidInputAlertCreator(String errorMessage) {
 		invalidInputAlert = new AlertDialog.Builder(this);
 		invalidInputAlert.setMessage(errorMessage)
@@ -63,7 +64,8 @@ public class WindowActivity2 extends Activity {
 		AlertDialog alert = invalidInputAlert.create();
 		alert.show();
 	}
-
+	
+	// Populate the two spinners with the pane and frame types
 	public void initializeSpinners(){
 		windowPaneTypeSpinner = (Spinner) findViewById(R.id.windowPaneTypeSpinner);
 		windowFrameTypeSpinner = (Spinner) findViewById(R.id.windowFrameTypeSpinner);
@@ -80,7 +82,7 @@ public class WindowActivity2 extends Activity {
 	}
 
 
-	
+	// Button listener
 	public void setButtonOnClickListeners(){
 		
 		nextButton.setOnClickListener(new OnClickListener(){
@@ -93,10 +95,12 @@ public class WindowActivity2 extends Activity {
 		addWindowButton.setOnClickListener(new OnClickListener(){
 			
 			@Override
+			// Create a new window object and store it in the list
 			public void onClick(View v) {
 				Window toAdd = new Window();
 				
 				try {
+					// Set all window information
 					float windowHeight = Float.parseFloat(windowHeightEditText.getText().toString());
 					toAdd.set_window_height(windowHeight);
 					
@@ -105,6 +109,7 @@ public class WindowActivity2 extends Activity {
 					
 					int windowQuantity = Integer.parseInt(windowQuantityEditText.getText().toString());
 					toAdd.set_window_quantity(windowQuantity);
+					
 					if(windowQuantity < 1) {
 						throw new QuantityException();
 					}
@@ -115,7 +120,11 @@ public class WindowActivity2 extends Activity {
 					String windowFrameType = windowFrameTypeSpinner.getSelectedItem().toString();
 					toAdd.set_window_frame_type(windowFrameType);
 					
+					// Add to window list
 					currentCustomer.add_window(toAdd);
+					
+					// Reset values
+					reset();
 				} 
 				catch (QuantityException e) {
 					windowQuantityEditText.getText().clear();
@@ -123,16 +132,23 @@ public class WindowActivity2 extends Activity {
 				}
 				catch(NumberFormatException e) {
 					toAdd = null;
-					windowHeightEditText.getText().clear();
-					windowWidthEditText.getText().clear();
-					windowQuantityEditText.getText().clear();
 					invalidInputAlertCreator("Invalid Input");
+					reset();
 				} 
-				
 			}	
 		});
 	}
 	
+	// Reset all xml fields
+	public void reset() {
+		windowHeightEditText.getText().clear();
+		windowWidthEditText.getText().clear();
+		windowQuantityEditText.getText().clear();
+		windowFrameTypeSpinner.setSelection(0);
+		windowPaneTypeSpinner.setSelection(0);
+	}
+	
+	// Too few windows exception
 	public class QuantityException extends Exception {
 		private static final long serialVersionUID = 1L;
 		public QuantityException() {

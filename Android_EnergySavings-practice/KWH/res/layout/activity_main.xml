@@ -1,0 +1,88 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+        <EditText
+        android:id="@+id/etZip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:hint="Enter Zipcode"  
+        android:ems="10" >
+
+    </EditText>
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etZip"
+        android:layout_below="@+id/etZip"
+        android:text="Search" />
+
+    <TextView
+        android:id="@+id/tvCityLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btn1"
+        android:layout_below="@+id/btn1"
+        android:layout_marginTop="14dp"
+        android:text="City : " />
+
+    <TextView
+        android:id="@+id/tvCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tvCityLabel"
+        android:layout_toRightOf="@+id/tvCityLabel"
+        android:layout_marginLeft="10dp"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+    <TextView
+        android:id="@+id/tvStateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvCity"
+        android:layout_marginTop="15dp"
+        android:text="State: " />
+
+        <TextView
+        android:id="@+id/tvState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_alignBaseline="@+id/tvStateLabel"
+        android:layout_alignBottom="@+id/tvStateLabel"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/tvStateLabel"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <TextView
+        android:id="@+id/tvKWHLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvState"
+        android:layout_marginTop="15dp"
+        android:text="Kwh(cents):" />
+
+    <TextView
+        android:id="@+id/tvKWH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_alignBaseline="@+id/tvKWHLabel"
+        android:layout_alignBottom="@+id/tvKWHLabel"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/tvKWHLabel"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</RelativeLayout>
